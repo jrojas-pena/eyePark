@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Parking_Lot(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    number = models.IntegerField(default=0)
+    number = models.IntegerField(default=0, primary_key=True)
     location = models.CharField(max_length=200)
 
     def __str__(self):
