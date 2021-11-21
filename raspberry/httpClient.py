@@ -1,25 +1,32 @@
 import httpx
+import json
 
+
+def checkPlateNumber(data, config):
+    with httpx.Client() as client:
+        url = '%s:%d%s%d/%s/' % (config["server_url"], config["server_port"], config["check_plate_path"], data['parking-lot-number'], data['license-plate'])
+        r = client.get(url)
+        return r.status_code == 200
+
+def addPlateNumber(data, config):
+    with httpx.Client() as client:
+        url = config["server_url"]  + ':%d' % config["server_port"] + config["add_plate_path"]
+        r = client.post(json=data, url=url)
+        return r.status_code == 200
+
+
+# f = open("/home/juan/eyePark/raspberry/config/system_config.json", "r")
+# config = json.loads(f.read())
+# f.close()
 # data = {
-#     "parking-lot-number" : "52",
+#     "parking-lot-number" : 52,
 #     "license-plate" : "abc123"
 # }
-
-# choice = input("1. for checking\n2.for inserting\n")
-# if int(choice) == 1:
-#     r = httpx.post('http://localhost:8000/check-plate/', json=data)
-# elif int(choice) == 2:
-#     data['parking-lot-number'] = input("Insert parking lot number: ")
-#     data['license-plate'] = input("Insert license plate: ")
-#     r = httpx.post('http://localhost:8000/check-plate/add-plate/', json=data)
-
-# print(r.status_code)
-
-def checkPlateNumber(data, url):
-    r = httpx.post(url, json=data)
-
-def insertPlate(data, url):
-    r = httpx.post(url, json=data)
-
-def requestCsrfToken(url):
-    return 0
+# print(checkPlateNumber(data, config))
+# print(addPlateNumber(data, config))
+# with httpx.Client() as client:
+#     url = config["server_url"]  + ':%d' % config["server_port"]
+#     # csrfToken = requestCsrfToken(url + config["get_csrf_path"], client)
+#     postRequest(data, url + config["check_plate_path"],  client)
+#     postRequest(data, url + config["add_plate_path"], client)
+    
