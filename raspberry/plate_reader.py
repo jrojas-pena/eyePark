@@ -1,5 +1,5 @@
 from openalpr import Alpr
-from argparse import ArgumentParser
+
 
 
 class plate_reader:
@@ -19,7 +19,7 @@ class plate_reader:
     def read_plate(self, image):
         jpeg_bytes = open(image, "rb").read()
         results = self.alpr.recognize_array(jpeg_bytes)
-        print(results['results'][0]['plate'])
+        return results['results'][0]['plate']
     
     def __enter__(self):
         return self
