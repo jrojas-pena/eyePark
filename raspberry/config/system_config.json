@@ -7,5 +7,6 @@
     "get_csrf_path" : "/get-csrf-token/",
     "country" : "us",
     "config_file" : "/etc/openalpr/openalpr.conf",
-    "runtime_data" : "/usr/share/openalpr/runtime_data"
+    "runtime_data" : "/usr/share/openalpr/runtime_data",
+    "camera_port" : 0    
 }
