@@ -1,6 +1,6 @@
-import httpx
+import requests
 
-class http_eyepark_client(httpx.Client):
+class http_eyepark_client(requests):
 
     def __init__(self, config):
         super().__init__()
