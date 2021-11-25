@@ -1,6 +1,6 @@
+import sys
+sys.path.append('/home/pi/openalpr/src/bindings/python')
 from openalpr import Alpr
-
-
 
 class plate_reader:
 
