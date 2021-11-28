@@ -19,7 +19,10 @@ class plate_reader:
     def read_plate(self, image):
         jpeg_bytes = open(image, "rb").read()
         results = self.alpr.recognize_array(jpeg_bytes)
-        return results['results'][0]['plate']
+        if results['results']:
+            return results['results'][0]['plate']
+        else:
+            return False
     
     def __enter__(self):
         return self
