@@ -28,7 +28,7 @@ camera_port = config['camera_port']
 #declaring plate_reader object
 reader = plate_reader(country, config_file, runtime_data)
 
-print(reader.read_plate(take_picture))
+print(reader.read_plate(take_picture()))
 
 
 
