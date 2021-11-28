@@ -28,7 +28,12 @@ camera_port = config['camera_port']
 #declaring plate_reader object
 reader = plate_reader(country, config_file, runtime_data)
 
-print(reader.read_plate(take_picture(camera_port)))
+while True:
+    read = reader.read_plate(take_picture(camera_port))
+    print(read)
+    if read == "CASZ203":
+        break
+    
 
 
 
