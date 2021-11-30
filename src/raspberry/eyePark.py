@@ -5,6 +5,7 @@ from datetime import datetime
 import cv2
 import time
 import glob, os
+import lcd_i2c
 
 #taking picture from camera
 def take_picture(camera_port):
@@ -16,6 +17,17 @@ def take_picture(camera_port):
     del(camera)
     return image_path
 
+def get_keypad_input():
+    return "123"
+
+def get_distance():
+    return 
+
+def display_lcd(message):
+    return
+
+
+
 
 #configuration file
 config = json.load(open('config/system_config.json'))
@@ -26,20 +38,24 @@ config_file = config['config_file']
 runtime_data = config['runtime_data']
 camera_port = config['camera_port']
 
-#declaring plate_reader object
 reader = plate_reader(country, config_file, runtime_data)
+client = http_eyepark_client(config)
 
 while True:
-    read = reader.read_plate(take_picture(camera_port))
+    image_path = take_picture(camera_port)
+    read = reader.read_plate(image_path)
+
     print(read)
+
+    #remove files from RAM
+    os.remove(image_path)
     if read == "CASZ203":
         break
     
+#declaring http_eyepark_client
+client = http_eyepark_client(config)
 
-files = glob.glob('/tmp/*.png')
 
-for file in files:
-    os.remove(file)
 
 
 
