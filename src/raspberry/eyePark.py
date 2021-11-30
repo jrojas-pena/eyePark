@@ -1,11 +1,13 @@
 from http_eyepark_client import http_eyepark_client
 from plate_reader import plate_reader
+from gpiozero import DistanceSensor, LED
 import json
 from datetime import datetime
 import cv2
 import time
-import glob, os
+import os
 import lcd_i2c
+
 
 #taking picture from camera
 def take_picture(camera_port):
@@ -21,9 +23,12 @@ def get_keypad_input():
     return "123"
 
 def get_distance():
+    dist.sleep
     return 
 
 def display_lcd(message):
+    lcd_i2c.lcd_init()
+    lcd_i2c.lcd_string()
     return
 
 
