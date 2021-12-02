@@ -25,9 +25,10 @@ def plate_was_not_found(keypad, plate):
     seconds_passed = 0
     LED_RED.on()
     input = ""
-    lcd_i2c.lcd_string("Accept %s?"%plate, lcd_i2c.LCD_LINE_2)
+    lcd_i2c.lcd_string("Accept %s?"%plate, lcd_i2c.LCD_LINE_1)
     while pin_attemps < 3 and seconds_passed < 60:
         pressed = keypad.readKey()
+        print(pressed)
         if pressed != "A" and pressed is not None:
             input += pressed
             lcd_i2c.lcd_string(len(input)*"*", lcd_i2c.LCD_LINE_2)
