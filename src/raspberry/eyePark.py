@@ -20,7 +20,7 @@ def take_picture(camera_port):
     del(camera)
     return image_path
 
-def plate_was_not_found(keypad: KeyPad, plate):
+def plate_was_not_found(keypad, plate):
     pin_attemps = 0
     seconds_passed = 0
     LED_RED.on()
