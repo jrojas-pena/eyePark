@@ -32,7 +32,7 @@ def plate_was_not_found(keypad, plate):
         print(pressed)
         if pressed != "A" and pressed is not None:
             input += pressed
-            lcd_i2c.lcd_string("Enter PIN: %s"%len(input)*"*", lcd_i2c.LCD_LINE_2)
+            lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
         time.sleep(1)
         seconds_passed += 1
     
