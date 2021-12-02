@@ -36,6 +36,7 @@ def plate_was_not_found(keypad, data, client):
             lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
         if pressed == "A" and input == "1234":
             client.addPlateNumber(data)
+            break
     
     # while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
     #     time.sleep(1)

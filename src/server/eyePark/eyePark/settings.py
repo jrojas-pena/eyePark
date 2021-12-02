@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.100', 'cafeprogramming.ddns.net', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.100', 'cafeprogramming.ddns.net', 'localhost', '0.0.0.0']
 
 # CSRF_USE_SESSIONS = True
 
