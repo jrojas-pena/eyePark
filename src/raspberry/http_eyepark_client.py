@@ -15,4 +15,14 @@ class http_eyepark_client():
         url = self.config["server_url"]  + ':%d' % self.config["server_port"] + self.config["add_plate_path"]
         r = requests.post(json=data, url=url)
         return r.status_code == 200
+    
+    def alertSecurity(self):
+        url = None
+        r = requests.get(url)
+        return r.status_code == 200
+    
+    def securityConfirmation(self):
+        url = None
+        r = requests.get(url)
+        return r.status_code == 200
 
