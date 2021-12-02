@@ -20,12 +20,12 @@ def take_picture(camera_port):
     del(camera)
     return image_path
 
-def plate_was_not_found(keypad, plate):
+def plate_was_not_found(keypad, data, client):
     pin_attemps = 0
     seconds_passed = 0
     LED_RED.on()
     input = ""
-    lcd_i2c.lcd_string("Accept %s?"%plate, lcd_i2c.LCD_LINE_1)
+    lcd_i2c.lcd_string("Accept %s?"%data['license-plate'], lcd_i2c.LCD_LINE_1)
     lcd_i2c.lcd_string("Enter PIN:", lcd_i2c.LCD_LINE_2)
     start = datetime.now()
     while pin_attemps < 3 and (datetime.now() - start).seconds < 60:
@@ -34,6 +34,8 @@ def plate_was_not_found(keypad, plate):
             print(pressed)
             input += pressed
             lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
+        if pressed == "A" and input == "1234":
+            client.addPlateNumber(data)
     
     # while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
     #     time.sleep(1)
@@ -74,6 +76,11 @@ while True:
     plate = reader.read_plate(image_path)
 
     print(plate)
+    data = {
+        "parking-lot-number": 52,
+        "license-plate": plate
+    }
+    isCarInDb = client.checkPlateNumber(data)
 
     #remove files from RAM
     os.remove(image_path)
@@ -84,7 +91,9 @@ while True:
         ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
         numberOfTries = 0 #Reset number of tries
     elif numberOfTries > 10: # If number of tries of reading the license plate is more than 10
-        plate_was_not_found(keypad, plate)
+        plate_was_not_found(keypad, data, client)
+        ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
+        numberOfTries = 0
 
 
 
