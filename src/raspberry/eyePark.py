@@ -96,8 +96,12 @@ while True:
     os.remove(image_path)
     if isCarInDb and numberOfTries < 10 and plate:
         LED_GREEN.on()
+        lcd_i2c.lcd_string("%s accepted"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+        lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
         time.sleep(10) #Green LED on for 10 seconds
         LED_GREEN.off()
+        lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_1)
+        lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
         ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
         numberOfTries = 0 #Reset number of tries
     elif numberOfTries > 10 and plate: # If number of tries of reading the license plate is more than 10
