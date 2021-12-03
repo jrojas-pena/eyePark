@@ -48,6 +48,8 @@ def plate_was_not_found(keypad, data, client):
         lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
 
     while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
+        lcd_i2c.lcd_string("%s rejected"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+        lcd_i2c.lcd_string("Calling security", lcd_i2c.LCD_LINE_2)
         time.sleep(1)
     LED_RED.off()
 
