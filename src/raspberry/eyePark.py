@@ -34,6 +34,7 @@ def plate_was_not_found(keypad, data, client):
             input += pressed
         elif pressed == "A":
             if input == "1234" and client.addPlateNumber(data):
+                LED_RED.off()
                 LED_GREEN.on()
                 time.sleep(10) #Green LED on for 10 seconds
                 LED_GREEN.off()
@@ -46,6 +47,8 @@ def plate_was_not_found(keypad, data, client):
 
     while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
         time.sleep(1)
+    lcd_i2c.lcd_string("%s accepted"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+    lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
     LED_RED.off()
 
 
@@ -85,17 +88,17 @@ while True:
         "parking-lot-number": 52,
         "license-plate": plate
     }
-    isCarInDb = client.checkPlateNumber(data) if plate else False 
+    isCarInDb = client.checkPlateNumber(data)
 
     #remove files from RAM
     os.remove(image_path)
-    if isCarInDb and numberOfTries < 10:
+    if isCarInDb and numberOfTries < 10 and plate:
         LED_GREEN.on()
         time.sleep(10) #Green LED on for 10 seconds
         LED_GREEN.off()
         ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
         numberOfTries = 0 #Reset number of tries
-    elif numberOfTries > 10: # If number of tries of reading the license plate is more than 10
+    elif numberOfTries > 10 and plate: # If number of tries of reading the license plate is more than 10
         plate_was_not_found(keypad, data, client)
         ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
         numberOfTries = 0
