@@ -1,0 +1,485 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Raspberry_Pi_2_or_3:Raspberry_Pi_2_3 RP?
+U 1 1 61A9B008
+P 2100 2500
+F 0 "RP?" H 3550 2765 50  0000 C CNN
+F 1 "Raspberry_Pi_2_3" H 3550 2674 50  0000 C CNN
+F 2 "RASPBERRYPI" H 3300 3400 50  0001 L CNN
+F 3 "https://cdn.sparkfun.com/assets/learn_tutorials/6/7/6/PiZero_1.pdf" H 3300 3100 50  0001 L CNN
+F 4 "Raspberry Pi Zero 2 or 3 Single-board Computers" H 3300 3000 50  0001 L CNN "Description"
+F 5 "RASPBERRY-PI" H 3300 3300 50  0001 L CNN "Manufacturer_Name"
+F 6 "Raspberry Pi 2 or 3" H 3300 3200 50  0001 L CNN "Manufacturer_Part_Number"
+	1    2100 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R1
+U 1 1 61A9B55D
+P 7600 1400
+F 0 "R1" V 7713 1400 50  0000 C CNN
+F 1 "R_Small_US" H 7668 1355 50  0001 L CNN
+F 2 "" H 7600 1400 50  0001 C CNN
+F 3 "~" H 7600 1400 50  0001 C CNN
+	1    7600 1400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 61A9FDC5
+P 8150 1400
+F 0 "R?" V 8263 1400 50  0000 C CNN
+F 1 "R_Small_US" H 8218 1355 50  0001 L CNN
+F 2 "" H 8150 1400 50  0001 C CNN
+F 3 "~" H 8150 1400 50  0001 C CNN
+	1    8150 1400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 61AA0142
+P 8750 1100
+F 0 "R?" V 8863 1100 50  0000 C CNN
+F 1 "R_Small_US" H 8818 1055 50  0001 L CNN
+F 2 "" H 8750 1100 50  0001 C CNN
+F 3 "~" H 8750 1100 50  0001 C CNN
+	1    8750 1100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 61AA0294
+P 9050 1650
+F 0 "R?" V 9163 1650 50  0000 C CNN
+F 1 "R_Small_US" H 9118 1605 50  0001 L CNN
+F 2 "" H 9050 1650 50  0001 C CNN
+F 3 "~" H 9050 1650 50  0001 C CNN
+	1    9050 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61AAA177
+P 8550 2600
+F 0 "SW?" H 8550 2793 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 8550 2794 50  0001 C CNN
+F 2 "" H 8550 2800 50  0001 C CNN
+F 3 "~" H 8550 2800 50  0001 C CNN
+	1    8550 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABAA05
+P 9100 2600
+F 0 "SW?" H 9100 2793 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9100 2794 50  0001 C CNN
+F 2 "" H 9100 2800 50  0001 C CNN
+F 3 "~" H 9100 2800 50  0001 C CNN
+	1    9100 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABAD83
+P 9650 2600
+F 0 "SW?" H 9650 2793 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9650 2794 50  0001 C CNN
+F 2 "" H 9650 2800 50  0001 C CNN
+F 3 "~" H 9650 2800 50  0001 C CNN
+	1    9650 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABB247
+P 10200 2600
+F 0 "SW?" H 10200 2793 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 10200 2794 50  0001 C CNN
+F 2 "" H 10200 2800 50  0001 C CNN
+F 3 "~" H 10200 2800 50  0001 C CNN
+	1    10200 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABB6D7
+P 8550 2900
+F 0 "SW?" H 8550 3093 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 8550 3094 50  0001 C CNN
+F 2 "" H 8550 3100 50  0001 C CNN
+F 3 "~" H 8550 3100 50  0001 C CNN
+	1    8550 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABBBF4
+P 9100 2900
+F 0 "SW?" H 9100 3093 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9100 3094 50  0001 C CNN
+F 2 "" H 9100 3100 50  0001 C CNN
+F 3 "~" H 9100 3100 50  0001 C CNN
+	1    9100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABBFC0
+P 9650 2900
+F 0 "SW?" H 9650 3093 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9650 3094 50  0001 C CNN
+F 2 "" H 9650 3100 50  0001 C CNN
+F 3 "~" H 9650 3100 50  0001 C CNN
+	1    9650 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABC715
+P 10200 2900
+F 0 "SW?" H 10200 3093 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 10200 3094 50  0001 C CNN
+F 2 "" H 10200 3100 50  0001 C CNN
+F 3 "~" H 10200 3100 50  0001 C CNN
+	1    10200 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABCC55
+P 8550 3250
+F 0 "SW?" H 8550 3443 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 8550 3444 50  0001 C CNN
+F 2 "" H 8550 3450 50  0001 C CNN
+F 3 "~" H 8550 3450 50  0001 C CNN
+	1    8550 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABD008
+P 9100 3250
+F 0 "SW?" H 9100 3443 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9100 3444 50  0001 C CNN
+F 2 "" H 9100 3450 50  0001 C CNN
+F 3 "~" H 9100 3450 50  0001 C CNN
+	1    9100 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABDA57
+P 9650 3250
+F 0 "SW?" H 9650 3443 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9650 3444 50  0001 C CNN
+F 2 "" H 9650 3450 50  0001 C CNN
+F 3 "~" H 9650 3450 50  0001 C CNN
+	1    9650 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABDF9E
+P 10200 3250
+F 0 "SW?" H 10200 3443 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 10200 3444 50  0001 C CNN
+F 2 "" H 10200 3450 50  0001 C CNN
+F 3 "~" H 10200 3450 50  0001 C CNN
+	1    10200 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABE472
+P 8550 3550
+F 0 "SW?" H 8550 3743 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 8550 3744 50  0001 C CNN
+F 2 "" H 8550 3750 50  0001 C CNN
+F 3 "~" H 8550 3750 50  0001 C CNN
+	1    8550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABEAD0
+P 9100 3550
+F 0 "SW?" H 9100 3743 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9100 3744 50  0001 C CNN
+F 2 "" H 9100 3750 50  0001 C CNN
+F 3 "~" H 9100 3750 50  0001 C CNN
+	1    9100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABF21D
+P 9650 3550
+F 0 "SW?" H 9650 3743 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 9650 3744 50  0001 C CNN
+F 2 "" H 9650 3750 50  0001 C CNN
+F 3 "~" H 9650 3750 50  0001 C CNN
+	1    9650 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 61ABF8F2
+P 10200 3550
+F 0 "SW?" H 10200 3743 50  0001 C CNN
+F 1 "SW_Push_Dual_x2" H 10200 3744 50  0001 C CNN
+F 2 "" H 10200 3750 50  0001 C CNN
+F 3 "~" H 10200 3750 50  0001 C CNN
+	1    10200 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 2600 8350 2700
+Wire Wire Line
+	8350 2700 8900 2700
+Wire Wire Line
+	10000 2700 10000 2600
+Connection ~ 8350 2600
+Wire Wire Line
+	8900 2600 8900 2700
+Connection ~ 8900 2700
+Wire Wire Line
+	8900 2700 9450 2700
+Wire Wire Line
+	9450 2600 9450 2700
+Connection ~ 9450 2700
+Wire Wire Line
+	9450 2700 10000 2700
+Wire Wire Line
+	8350 2900 8350 3050
+Wire Wire Line
+	8350 3050 8900 3050
+Wire Wire Line
+	10000 3050 10000 2900
+Connection ~ 8350 2900
+Wire Wire Line
+	8900 2900 8900 3050
+Connection ~ 8900 3050
+Wire Wire Line
+	8900 3050 9450 3050
+Wire Wire Line
+	9450 2900 9450 3050
+Connection ~ 9450 3050
+Wire Wire Line
+	9450 3050 10000 3050
+Wire Wire Line
+	8350 3250 8350 3350
+Wire Wire Line
+	8350 3350 8900 3350
+Wire Wire Line
+	10000 3350 10000 3250
+Connection ~ 8350 3250
+Wire Wire Line
+	8900 3250 8900 3350
+Connection ~ 8900 3350
+Wire Wire Line
+	8900 3350 9450 3350
+Wire Wire Line
+	9450 3250 9450 3350
+Connection ~ 9450 3350
+Wire Wire Line
+	9450 3350 10000 3350
+Wire Wire Line
+	8350 3550 8350 3700
+Wire Wire Line
+	8350 3700 8900 3700
+Wire Wire Line
+	10000 3700 10000 3550
+Connection ~ 8350 3550
+Wire Wire Line
+	8900 3550 8900 3700
+Connection ~ 8900 3700
+Wire Wire Line
+	8900 3700 9450 3700
+Wire Wire Line
+	9450 3550 9450 3700
+Connection ~ 9450 3700
+Wire Wire Line
+	9450 3700 10000 3700
+Wire Wire Line
+	8750 2600 8750 2900
+Wire Wire Line
+	8750 2900 8750 3250
+Connection ~ 8750 2900
+Wire Wire Line
+	8750 3250 8750 3550
+Connection ~ 8750 3250
+Wire Wire Line
+	8750 3550 8750 3950
+Connection ~ 8750 3550
+Wire Wire Line
+	9300 2600 9300 2900
+Wire Wire Line
+	9300 2900 9300 3250
+Connection ~ 9300 2900
+Wire Wire Line
+	9300 3250 9300 3550
+Connection ~ 9300 3250
+Wire Wire Line
+	9300 3550 9300 4150
+Connection ~ 9300 3550
+Wire Wire Line
+	9850 2600 9850 2900
+Wire Wire Line
+	9850 2900 9850 3250
+Connection ~ 9850 2900
+Wire Wire Line
+	9850 3250 9850 3550
+Connection ~ 9850 3250
+Wire Wire Line
+	9850 3550 9850 4350
+Connection ~ 9850 3550
+Wire Wire Line
+	10400 2600 10400 2900
+Wire Wire Line
+	10400 2900 10400 3250
+Connection ~ 10400 2900
+Wire Wire Line
+	10400 3550 10400 3250
+Connection ~ 10400 3250
+Wire Wire Line
+	10400 3550 10400 4550
+Connection ~ 10400 3550
+$Comp
+L Interface:I2C_interface U?
+U 1 1 61B0F136
+P 8400 5600
+F 0 "U?" H 8265 6167 50  0000 C CNN
+F 1 "I2C_interface" H 8265 6076 50  0000 C CNN
+F 2 "Package_SO:VSSOP-8_2.3x2mm_P0.5mm" H 8400 5150 50  0001 C CNN
+F 3 "https://www.nxp.com/docs/en/data-sheet/PCA9306.pdf" H 8100 6050 50  0001 C CNN
+	1    8400 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 61AAA5A9
+P 1150 6450
+F 0 "#PWR?" H 1150 6200 50  0001 C CNN
+F 1 "GNDREF" H 1155 6277 50  0000 C CNN
+F 2 "" H 1150 6450 50  0001 C CNN
+F 3 "" H 1150 6450 50  0001 C CNN
+	1    1150 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 3500 1650 3500
+Wire Wire Line
+	1650 3500 1650 5250
+Wire Wire Line
+	1650 5250 5800 5250
+Wire Wire Line
+	5800 5250 5800 2600
+Wire Wire Line
+	5800 2600 8350 2600
+Wire Wire Line
+	2100 3700 1950 3700
+Wire Wire Line
+	1950 3700 1950 5000
+Wire Wire Line
+	1950 5000 6600 5000
+Wire Wire Line
+	6600 5000 6600 2900
+Wire Wire Line
+	6600 2900 8350 2900
+Wire Wire Line
+	2100 3900 1800 3900
+Wire Wire Line
+	1800 3900 1800 5450
+Wire Wire Line
+	1800 5450 7700 5450
+Wire Wire Line
+	7700 5450 7700 3250
+Wire Wire Line
+	7700 3250 8350 3250
+Wire Wire Line
+	5650 3100 5650 3550
+Wire Wire Line
+	5650 3550 8350 3550
+Wire Wire Line
+	5000 3100 5650 3100
+Wire Wire Line
+	5000 3300 5450 3300
+Wire Wire Line
+	5450 3300 5450 3950
+Wire Wire Line
+	5450 3950 8750 3950
+Wire Wire Line
+	5000 3500 5300 3500
+Wire Wire Line
+	5300 3500 5300 4150
+Wire Wire Line
+	5300 4150 9300 4150
+Wire Wire Line
+	5000 3700 5200 3700
+Wire Wire Line
+	5200 3700 5200 4350
+Wire Wire Line
+	5200 4350 9850 4350
+Wire Wire Line
+	5000 3900 5100 3900
+Wire Wire Line
+	5100 3900 5100 4550
+Wire Wire Line
+	5100 4550 10400 4550
+$Comp
+L power:GNDREF #PWR?
+U 1 1 61AC9A99
+P 1550 6450
+F 0 "#PWR?" H 1550 6200 50  0001 C CNN
+F 1 "GNDREF" H 1555 6277 50  0000 C CNN
+F 2 "" H 1550 6450 50  0001 C CNN
+F 3 "" H 1550 6450 50  0001 C CNN
+	1    1550 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 61AE36DE
+P 1150 5650
+F 0 "D?" V 1189 5532 50  0000 R CNN
+F 1 "LED" V 1098 5532 50  0000 R CNN
+F 2 "" H 1150 5650 50  0001 C CNN
+F 3 "~" H 1150 5650 50  0001 C CNN
+	1    1150 5650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 61AE8D5E
+P 1550 5650
+F 0 "D?" V 1589 5532 50  0000 R CNN
+F 1 "LED" V 1498 5532 50  0000 R CNN
+F 2 "" H 1550 5650 50  0001 C CNN
+F 3 "~" H 1550 5650 50  0001 C CNN
+	1    1550 5650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2100 3600 1150 3600
+Wire Wire Line
+	1150 3600 1150 5500
+Wire Wire Line
+	2100 4200 1550 4200
+Wire Wire Line
+	1550 4200 1550 5500
+$EndSCHEMATC
