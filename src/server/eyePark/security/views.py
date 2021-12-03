@@ -10,7 +10,7 @@ import json
 @csrf_exempt
 def alertSecurity(request):
     data = json.load(request.body)
-    parking_spot = data['parking_spot']
+    parking_spot = data['parking-lot-number']
     license_plate = data['license-plate']
     security_alert = SecurityAlerts(parking_spot = parking_spot, license_plate = license_plate)
     security_alert.save

@@ -27,7 +27,7 @@ def plate_was_not_found(keypad, data, client):
     lcd_i2c.lcd_string("Accept %s?"%data['license-plate'], lcd_i2c.LCD_LINE_1)
     lcd_i2c.lcd_string("Enter PIN:", lcd_i2c.LCD_LINE_2)
     start = datetime.now()
-    while pin_attemps < 3 and (datetime.now() - start).seconds < 60:
+    while pin_attemps < 3 and (datetime.now() - start).seconds < 20:
         pressed = keypad.readKey()
         if pressed != "A" and pressed is not None:
             print(pressed)
