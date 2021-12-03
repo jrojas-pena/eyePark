@@ -4,16 +4,18 @@ from .models import SecurityAlerts
 from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 import json
+from checkPlateNumber.models import Car, Parking_Lot
 
 # Create your views here.
 
 @csrf_exempt
 def alertSecurity(request):
-    data = json.load(request.body)
-    parking_spot = data['parking-lot-number']
+    data = json.loads(request.body)
+    parking_spot = get_object_or_404(Parking_Lot, pk=data['parking-lot-number'])
     license_plate = data['license-plate']
     security_alert = SecurityAlerts(parking_spot = parking_spot, license_plate = license_plate)
-    security_alert.save
+    print(security_alert)
+    security_alert.save()
     return HttpResponse()
     
 def securityConfirmation(request):
