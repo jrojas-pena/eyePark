@@ -42,7 +42,7 @@ def plate_was_not_found(keypad, data, client):
         else:
             pin_attemps -= 1
     
-    while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
+    while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
         time.sleep(1)
     # while not client.securityConfirmation(): # Loop until security confirms alert reception
     #     time.sleep(1)
