@@ -85,7 +85,7 @@ while True:
         "parking-lot-number": 52,
         "license-plate": plate
     }
-    isCarInDb = client.checkPlateNumber(data)
+    isCarInDb = client.checkPlateNumber(data) if plate else False 
 
     #remove files from RAM
     os.remove(image_path)
