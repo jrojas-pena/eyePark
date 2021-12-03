@@ -32,21 +32,20 @@ def plate_was_not_found(keypad, data, client):
         if pressed != "A" and pressed is not None:
             print(pressed)
             input += pressed
-            lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
-        elif pressed == "A" and input == "1234":
-            if client.addPlateNumber(data):
+        elif pressed == "A":
+            if input == "1234" and client.addPlateNumber(data):
                 LED_GREEN.on()
                 time.sleep(10) #Green LED on for 10 seconds
                 LED_GREEN.off()
                 break
-        elif pressed == "A":
-            input = ""
-            pin_attemps += 1
-    
+            else:
+                input = "" # Reset input if password is wrong
+                pin_attemps += 1
+
+        lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
+
     while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
         time.sleep(1)
-    # while not client.securityConfirmation(): # Loop until security confirms alert reception
-    #     time.sleep(1)
     LED_RED.off()
 
 
