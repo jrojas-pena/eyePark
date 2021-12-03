@@ -39,7 +39,8 @@ def plate_was_not_found(keypad, data, client):
                 time.sleep(10) #Green LED on for 10 seconds
                 LED_GREEN.off()
                 break
-        else:
+        elif pressed == "A":
+            input = ""
             pin_attemps += 1
     
     while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
