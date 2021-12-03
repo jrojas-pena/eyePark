@@ -22,7 +22,6 @@ def take_picture(camera_port):
 
 def plate_was_not_found(keypad, data, client):
     pin_attemps = 0
-    seconds_passed = 0
     LED_RED.on()
     input = ""
     lcd_i2c.lcd_string("Accept %s?"%data['license-plate'], lcd_i2c.LCD_LINE_1)
@@ -34,12 +33,17 @@ def plate_was_not_found(keypad, data, client):
             print(pressed)
             input += pressed
             lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
-        if pressed == "A" and input == "1234":
-            client.addPlateNumber(data)
-            break
+        elif pressed == "A" and input == "1234":
+            if client.addPlateNumber(data):
+                LED_GREEN.on()
+                time.sleep(10) #Green LED on for 10 seconds
+                LED_GREEN.off()
+                break
+        else:
+            pin_attemps -= 1
     
-    # while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
-    #     time.sleep(1)
+    while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
+        time.sleep(1)
     # while not client.securityConfirmation(): # Loop until security confirms alert reception
     #     time.sleep(1)
     LED_RED.off()

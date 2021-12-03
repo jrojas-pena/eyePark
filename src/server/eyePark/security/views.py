@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
-from .models import Car, Parking_Lot, SecurityAlerts
+from .models import SecurityAlerts
 from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 import json
