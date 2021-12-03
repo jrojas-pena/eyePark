@@ -1,0 +1,6 @@
+{% if security_alerts_list %}
+    <ul>
+        {% for alert in security_alerts_list%}
+            <li><div>{{alert.parking_spot}}</div><div>{{alert.license_plate}}</div>
+        {% endfor %}
+    </ul>

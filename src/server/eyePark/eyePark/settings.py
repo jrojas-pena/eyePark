@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.100', 'cafeprogramming.ddns.net', 'loca
 
 INSTALLED_APPS = [
     'checkPlateNumber.apps.CheckplatenumberConfig',
+    'security.apps.SecurityConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
