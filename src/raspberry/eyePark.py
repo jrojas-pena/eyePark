@@ -34,10 +34,12 @@ def plate_was_not_found(keypad, data, client):
             input += pressed
         elif pressed == "A":
             if input == "1234" and client.addPlateNumber(data):
+                lcd_i2c.lcd_string("%s accepted"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+                lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
                 LED_RED.off()
                 LED_GREEN.on()
                 time.sleep(10) #Green LED on for 10 seconds
-                LED_GREEN.off()
+                LED_GREEN.off()                
                 break
             else:
                 input = "" # Reset input if password is wrong
@@ -47,8 +49,6 @@ def plate_was_not_found(keypad, data, client):
 
     while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
         time.sleep(1)
-    lcd_i2c.lcd_string("%s accepted"%data['license-plate'], lcd_i2c.LCD_LINE_1)
-    lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
     LED_RED.off()
 
 
