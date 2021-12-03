@@ -20,24 +20,35 @@ def take_picture(camera_port):
     del(camera)
     return image_path
 
-def plate_was_not_found(keypad, plate):
+def plate_was_not_found(keypad, data, client):
     pin_attemps = 0
-    seconds_passed = 0
     LED_RED.on()
     input = ""
-    lcd_i2c.lcd_string("Accept %s?"%plate, lcd_i2c.LCD_LINE_2)
-    while pin_attemps < 3 and seconds_passed < 60:
+    lcd_i2c.lcd_string("Accept %s?"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+    lcd_i2c.lcd_string("Enter PIN:", lcd_i2c.LCD_LINE_2)
+    start = datetime.now()
+    while pin_attemps < 3 and (datetime.now() - start).seconds < 30:
         pressed = keypad.readKey()
         if pressed != "A" and pressed is not None:
+            print(pressed)
             input += pressed
-            lcd_i2c.lcd_string(len(input)*"*", lcd_i2c.LCD_LINE_2)
+        elif pressed == "A":
+            if input == "1234" and client.addPlateNumber(data):
+                LED_RED.off()
+                LED_GREEN.on()
+                time.sleep(10) #Green LED on for 10 seconds
+                LED_GREEN.off()
+                break
+            else:
+                input = "" # Reset input if password is wrong
+                pin_attemps += 1
+
+        lcd_i2c.lcd_string("Enter PIN: %s"%(len(input)*"*"), lcd_i2c.LCD_LINE_2)
+
+    while not client.alertSecurity(data): # Loop until response from server is True, 1 second wait in between
         time.sleep(1)
-        seconds_passed += 1
-    
-    # while not client.alertSecurity(): # Loop until response from server is True, 1 second wait in between
-    #     time.sleep(1)
-    # while not client.securityConfirmation(): # Loop until security confirms alert reception
-    #     time.sleep(1)
+    lcd_i2c.lcd_string("%s accepted"%data['license-plate'], lcd_i2c.LCD_LINE_1)
+    lcd_i2c.lcd_string("", lcd_i2c.LCD_LINE_2)
     LED_RED.off()
 
 
@@ -73,17 +84,24 @@ while True:
     plate = reader.read_plate(image_path)
 
     print(plate)
+    data = {
+        "parking-lot-number": 52,
+        "license-plate": plate
+    }
+    isCarInDb = client.checkPlateNumber(data)
 
     #remove files from RAM
     os.remove(image_path)
-    if isCarInDb and numberOfTries < 10:
+    if isCarInDb and numberOfTries < 10 and plate:
         LED_GREEN.on()
         time.sleep(10) #Green LED on for 10 seconds
         LED_GREEN.off()
         ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
         numberOfTries = 0 #Reset number of tries
-    elif numberOfTries > 10: # If number of tries of reading the license plate is more than 10
-        plate_was_not_found(keypad, plate)
+    elif numberOfTries > 10 and plate: # If number of tries of reading the license plate is more than 10
+        plate_was_not_found(keypad, data, client)
+        ultrasonic.wait_for_out_of_range() #Loop stops until car is at a distance of 30cm or more
+        numberOfTries = 0
 
 
 

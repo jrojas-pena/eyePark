@@ -16,13 +16,13 @@ class http_eyepark_client():
         r = requests.post(json=data, url=url)
         return r.status_code == 200
     
-    def alertSecurity(self):
-        url = None
-        r = requests.get(url)
+    def alertSecurity(self, data):
+        url = '%s:%d%s' % (self.config["server_url"], self.config["server_port"], self.config["security_alert"])
+        r = requests.post(url, json=data)
         return r.status_code == 200
     
     def securityConfirmation(self):
-        url = None
+        url = '%s:%d%s%d/%s/' % (self.config["server_url"], self.config["server_port"], self.config["security_alert"])
         r = requests.get(url)
         return r.status_code == 200
 
