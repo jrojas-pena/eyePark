@@ -1,7 +1,7 @@
-Eye-Park
+#Eye-Park
 
 Eye-Park is an AI-based parking lot monitoring system that uses a Raspberry Pi and an attached camera to monitor parking spots and track the license plates of parked cars. The system is able to check whether a parked car has paid for the parking spot, and send alerts to security if an unauthorized vehicle is parked.
-Requirements
+#Requirements
 
 To use Eye-Park, you will need:
 
@@ -20,7 +20,7 @@ Setup
     Set up the DDNS service if you do not have a static IP address.
     Run the server with python manage.py runserver and the client with python client.py.
 
-Theory of Operation
+#Theory of Operation
 
 The Eye-Park system is composed of a server, which uses the Django python framework to receive and respond to requests, and a client, which runs on a Raspberry Pi and captures license plate images using OpenALPR.
 
