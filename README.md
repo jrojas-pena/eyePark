@@ -1,26 +1,26 @@
-#Eye-Park
+# Eye-Park
 
 Eye-Park is an AI-based parking lot monitoring system that uses a Raspberry Pi and an attached camera to monitor parking spots and track the license plates of parked cars. The system is able to check whether a parked car has paid for the parking spot, and send alerts to security if an unauthorized vehicle is parked.
-#Requirements
+# Requirements
 
 To use Eye-Park, you will need:
 
-    A Raspberry Pi 3 or higher
-    An SD card with Raspbian installed
-    A compatible camera module
-    OpenALPR installed on your Raspberry Pi
-    A static IP address or DDNS service
+   - A Raspberry Pi 3 or higher
+   - An SD card with Raspbian installed
+   - A compatible camera module
+   - OpenALPR installed on your Raspberry Pi
+   - A static IP address or DDNS service
 
-Setup
+# Setup
 
-    Install Raspbian on your Raspberry Pi and set up the camera module.
-    Clone the Eye-Park repository from Github.
-    Install OpenALPR on your Raspberry Pi and set it up according to the instructions provided in the OpenALPR documentation.
-    Configure the server by editing the settings.py file with your own settings for the database, email, and other options.
-    Set up the DDNS service if you do not have a static IP address.
-    Run the server with python manage.py runserver and the client with python client.py.
+   - Install Raspbian on your Raspberry Pi and set up the camera module.
+   - Clone the Eye-Park repository from Github.
+   - Install OpenALPR on your Raspberry Pi and set it up according to the instructions provided in the OpenALPR documentation.
+   - Configure the server by editing the settings.py file with your own settings for the database, email, and other options.
+   - Set up the DDNS service if you do not have a static IP address.
+   - Run the server with python manage.py runserver and the client with python client.py.
 
-#Theory of Operation
+# Theory of Operation
 
 The Eye-Park system is composed of a server, which uses the Django python framework to receive and respond to requests, and a client, which runs on a Raspberry Pi and captures license plate images using OpenALPR.
 
