@@ -1,6 +1,7 @@
 # Eye-Park
 
-Eye-Park is an AI-based parking lot monitoring system that uses a Raspberry Pi and an attached camera to monitor parking spots and track the license plates of parked cars. The system is able to check whether a parked car has paid for the parking spot, and send alerts to security if an unauthorized vehicle is parked.
+EyePark is a surveillance system that utilizes advanced image processing and neural networks to provide reliable passive surveillance on private parking garages. Equipped with modern sensors and hardware, it captures and reads plate numbers of vehicles entering a specific spot and compares them to a database of registered vehicles. Unauthorized vehicle entrance triggers notifications to the user via a companion app or through a physical approach using an admin PIN.
+
 # Requirements
 
 To use Eye-Park, you will need:
